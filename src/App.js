@@ -1,22 +1,31 @@
 import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import CatList from './CatList';
+import CatListWrapper from './CatListWrapper';
 import CatModal from './CatModal';
 import { useLocation, Routes, Route } from 'react-router-dom';
+import CatDetailWrapper from './CatDetailWrapper';
+import { Container } from '@mui/material';
 
 function App() {
-  let location = useLocation();
-  let state = location.state;
+  const location = useLocation();
+  const background = location.state && location.state.background;
 
   return (
     <>
       <CssBaseline />
-      <Routes location={state === null ? location : state.BackgroundLocation}>
-        <Route path="/">
-          <Route index element={<CatList limit={10} />} />
-          <Route path="/img/:id" element={<CatModal />} />
-        </Route>
-      </Routes>
+        <Container>
+        <Routes location={background || location}>
+          <Route path="/">
+            <Route index element={<CatListWrapper limit={10} />} />
+            <Route path="/img/:id" element={<CatDetailWrapper />} />
+          </Route>
+        </Routes>
+        {background && (
+          <Routes >
+            <Route path="/img/:id" element={<CatModal />} />
+          </Routes>
+        )}
+      </Container>
     </>
   );
 }

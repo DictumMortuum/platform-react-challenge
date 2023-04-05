@@ -1,18 +1,56 @@
 import React from 'react';
-import LoadingButton from '@mui/lab/LoadingButton';
-import Container from '@mui/material/Container';
-import CatList from './List';
-import { useCats } from './useCats';
+import Box from '@mui/material/Box';
+import { Link, useLocation } from 'react-router-dom';
+import { styled } from '@mui/material';
 
-const CatListWrapper = ({ limit }) => {
-  const { loadMore, isLoading, items } = useCats({ limit });
-
-  return (
-    <Container>
-      <CatList data={items} />
-      <LoadingButton loading={isLoading} variant="contained" data-testid="morecat" onClick={loadMore}>Load More</LoadingButton>
-    </Container>
+const filterDuplicates = col => {
+  const ids = col.map(d => d.id);
+  return col.filter(
+    ({ id }, i) => !ids.includes(id, i+1)
   );
 }
 
-export default CatListWrapper;
+const size = 200;
+
+const Gallery = styled(Box)(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: `repeat(auto-fit, minmax(${size}px, 1fr))`,
+  gap: theme.spacing(3),
+  paddingBottom: theme.spacing(1),
+  paddingTop: theme.spacing(1),
+}));
+
+const CatListItem = ({ data }) => {
+  const location = useLocation();
+  const records = filterDuplicates(data);
+
+  return (
+    <Gallery>
+      {records.map(d => {
+        const { id, url, breeds: [{ name }] } = d;
+
+        return (
+          <Box key={id} width={size} height={size}>
+            <Link to={`/img/${id}`} state={{ background: location, ...d }}>
+              <img
+                src={url}
+                srcSet={url}
+                alt={name}
+                loading="lazy"
+                data-testid="catimage"
+                style={{
+                  width: "100%",
+                  height: size,
+                  borderRadius: 8,
+                  objectFit: "cover"
+                }}
+              />
+            </Link>
+          </Box>
+        );
+      })}
+    </Gallery>
+  );
+}
+
+export default CatListItem;

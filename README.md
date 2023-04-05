@@ -9,3 +9,8 @@
 - https://www.rumblefish.dev/blog/post/how-to-test-custom-react-hooks
 - https://www.js-howto.com/test-responsive-design-using-jest-and-react-testing-library
 - https://github.com/remix-run/react-router/tree/dev/examples/modal
+- https://dev.to/devmdmamun/create-contextual-modal-navigation-with-react-router-v6-28k2
+- https://bobbyhadz.com/blog/react-uselocation-may-be-used-only-in-context-of-router
+- https://testing-library.com/docs/example-react-router/
+- https://stackoverflow.com/questions/58117890/how-to-test-components-using-new-react-router-hooks
+- https://stackoverflow.com/questions/56593840/check-that-button-is-disabled-in-react-testing-library

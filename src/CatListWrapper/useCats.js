@@ -19,7 +19,7 @@ export const useCats = ({ limit }) => {
       setIsLoading(false);
     });
   // eslint-disable-next-line
-  }, [page, limit])
+  }, [page, limit]);
 
   const loadMore = () => {
     setPage(page+1);
