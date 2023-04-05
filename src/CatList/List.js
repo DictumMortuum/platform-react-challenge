@@ -1,7 +1,6 @@
 import React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import { useMediaQuery, useTheme } from '@mui/material';
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material';
 
 const filterDuplicates = col => {
   const ids = col.map(d => d.id);
@@ -10,20 +9,39 @@ const filterDuplicates = col => {
   );
 }
 
+const size = 200;
+
+const Gallery = styled(Box)(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: `repeat(auto-fit, minmax(${size}px, 1fr))`,
+  gap: theme.spacing(3),
+  paddingBottom: theme.spacing(1),
+  paddingTop: theme.spacing(1),
+}));
+
 const CatListItem = ({ data }) => {
-  const theme = useTheme();
-  const sm = useMediaQuery(theme.breakpoints.down("sm"));
-  const xl = useMediaQuery(theme.breakpoints.down("xl"));
   const records = filterDuplicates(data);
 
   return (
-    <ImageList cols={sm ? 2 : xl ? 4 : 5}>
+    <Gallery>
       {records.map(({ id, url, breeds: [{ name }] }) => (
-        <ImageListItem key={id}>
-          <img src={url} srcSet={url} alt={name} loading="lazy" data-testid="catimage" />
-        </ImageListItem>
+        <Box key={id} width={size} height={size}>
+          <img
+            src={url}
+            srcSet={url}
+            alt={name}
+            loading="lazy"
+            data-testid="catimage"
+            style={{
+              width: "100%",
+              height: size,
+              borderRadius: 8,
+              objectFit: "cover"
+            }}
+          />
+        </Box>
       ))}
-    </ImageList>
+    </Gallery>
   );
 }
 
