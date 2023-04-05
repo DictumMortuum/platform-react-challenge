@@ -5,6 +5,7 @@ import CatModal from './CatModal';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import CatDetailWrapper from './CatDetailWrapper';
 import { Container } from '@mui/material';
+import BreedListWrapper from './BreedListWrapper';
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
           <Route path="/">
             <Route index element={<CatListWrapper limit={10} />} />
             <Route path="/img/:id" element={<CatDetailWrapper />} />
+            <Route path="/breeds" element={<BreedListWrapper perPage={12} />} />
           </Route>
         </Routes>
         {background && (
