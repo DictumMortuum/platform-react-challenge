@@ -8,3 +8,4 @@
 - https://kentcdodds.com/blog/how-to-test-custom-react-hooks
 - https://www.rumblefish.dev/blog/post/how-to-test-custom-react-hooks
 - https://www.js-howto.com/test-responsive-design-using-jest-and-react-testing-library
+- https://github.com/remix-run/react-router/tree/dev/examples/modal
