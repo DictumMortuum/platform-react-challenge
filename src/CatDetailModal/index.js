@@ -1,8 +1,8 @@
 import React from 'react';
 import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 import { useLocation, useNavigate } from 'react-router-dom';
 import CatDetail from '../CatDetail';
-import Box from '@mui/material/Box';
 
 const CatModal = () => {
   const [open, setOpen] = React.useState(true);
