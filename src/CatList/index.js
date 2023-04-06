@@ -20,7 +20,7 @@ const Gallery = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(1),
 }));
 
-const CatListItem = ({ data }) => {
+const CatList = ({ data }) => {
   const location = useLocation();
   const records = filterDuplicates(data);
 
@@ -53,4 +53,4 @@ const CatListItem = ({ data }) => {
   );
 }
 
-export default CatListItem;
+export default CatList;
