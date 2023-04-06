@@ -31,4 +31,17 @@ test("should favourite an image", async () => {
     expect(result.current.error).toBe(null);
     expect(result.current.rs).toEqual({ "message":"SUCCESS", "id":101318813 });
   });
+
+  act(() => {
+    result.current.setFavourite({ image_id: 2, sub_id: 2 });
+    result.current.setFavourite({ image_id: 2, sub_id: 2 });
+  });
+
+  expect(result.current.isLoading).toBeTruthy();
+
+  await waitFor(() => {
+    expect(result.current.isLoading).toBeFalsy();
+    expect(result.current.error).toBe(null);
+    expect(result.current.rs).toEqual({ "message":"SUCCESS", "id":101318813 });
+  });
 });

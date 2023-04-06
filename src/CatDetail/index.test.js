@@ -32,6 +32,7 @@ test('render the CatDetail', async () => {
 
   act(() => {
     fireEvent.click(button);
+    fireEvent.click(button);
   });
 
   expect(button).toBeDisabled();
