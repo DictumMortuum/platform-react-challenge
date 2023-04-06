@@ -9,7 +9,7 @@ const CatListWrapper = ({ limit }) => {
   return (
     <>
       <CatList data={items} openModal={true} />
-      <LoadingButton loading={isLoading} variant="contained" data-testid="morecat" onClick={loadMore}>Load More</LoadingButton>
+      <LoadingButton loading={isLoading} variant="contained" data-testid="morecat" onClick={loadMore} sx={{ mt: 1 }}>Load More</LoadingButton>
     </>
   );
 }

@@ -8,6 +8,7 @@ import BreedDetailWrapper from './BreedDetailWrapper';
 import BreedDetailModal from './BreedDetailModal';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { Container } from '@mui/material';
+import Appbar from './Appbar';
 
 function App() {
   const location = useLocation();
@@ -16,7 +17,8 @@ function App() {
   return (
     <>
       <CssBaseline />
-        <Container>
+      <Appbar />
+      <Container>
         <Routes location={background || location}>
           <Route path="/">
             <Route index element={<CatListWrapper limit={10} />} />
