@@ -34,6 +34,7 @@ test("should fetch cats", async () => {
 
   act(() => {
     result.current.loadMore();
+    result.current.loadMore();
   });
 
   expect(result.current.isLoading).toBeTruthy();

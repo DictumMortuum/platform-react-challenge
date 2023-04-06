@@ -33,6 +33,7 @@ test('render the CatList and test the LoadMore button', async () => {
   const button = screen.getByTestId("morecat");
   expect(button).toHaveTextContent("Load More");
   fireEvent.click(button);
+  fireEvent.click(button);
 
   await waitFor(() => {
     const images = screen.getAllByTestId("catimage");
