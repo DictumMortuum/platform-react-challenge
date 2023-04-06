@@ -6,6 +6,7 @@ import CatDetailWrapper from './CatDetailWrapper';
 import BreedListWrapper from './BreedListWrapper';
 import BreedDetailWrapper from './BreedDetailWrapper';
 import BreedDetailModal from './BreedDetailModal';
+import FavouriteListWrapper from './FavouriteListWrapper';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { Container } from '@mui/material';
 import Appbar from './Appbar';
@@ -25,6 +26,7 @@ function App() {
             <Route path="/img/:id" element={<CatDetailWrapper />} />
             <Route path="/breeds" element={<BreedListWrapper perPage={12} />} />
             <Route path="/breeds/:id" element={<BreedDetailWrapper limit={10} />} />
+            <Route path="/favourites" element={<FavouriteListWrapper />} />
           </Route>
         </Routes>
         {background && (

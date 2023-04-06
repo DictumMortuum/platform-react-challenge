@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { addFavourite } from './api';
+import { addFavourite, delFavourite } from './api';
 
 export const useFavourite = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,10 +19,24 @@ export const useFavourite = () => {
     });
   };
 
+  const removeFavourite = (image_id) => {
+    if (isLoading) return;
+    setIsLoading(true);
+    delFavourite({ image_id }).then(({ json, err }) => {
+      if (err !== undefined) {
+        setError(err);
+      } else {
+        setResponse(json);
+      }
+      setIsLoading(false);
+    });
+  }
+
   return {
     rs,
     isLoading,
     error,
-    setFavourite
+    setFavourite,
+    removeFavourite
   };
 }

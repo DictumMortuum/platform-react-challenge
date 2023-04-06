@@ -499,3 +499,114 @@ export const breedDetails = [{
   "width": 880,
   "height": 1100
 }];
+
+export const favourites = [{
+  "id": 101318812,
+  "user_id": "w2yqnb",
+  "image_id": "S97Qj5YYO",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T16:44:23.000Z",
+  "image": {
+    "id": "S97Qj5YYO",
+    "url": "https://cdn2.thecatapi.com/images/S97Qj5YYO.jpg"
+  }
+},
+{
+  "id": 101318813,
+  "user_id": "w2yqnb",
+  "image_id": "ji-5E0VwY",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T16:45:28.000Z",
+  "image": {
+    "id": "ji-5E0VwY",
+    "url": "https://cdn2.thecatapi.com/images/ji-5E0VwY.jpg"
+  }
+},
+{
+  "id": 101318814,
+  "user_id": "w2yqnb",
+  "image_id": "DFHMMPNcD",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T16:55:43.000Z",
+  "image": {
+    "id": "DFHMMPNcD",
+    "url": "https://cdn2.thecatapi.com/images/DFHMMPNcD.jpg"
+  }
+},
+{
+  "id": 101318815,
+  "user_id": "w2yqnb",
+  "image_id": "J4Jv10E7O",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T17:03:16.000Z",
+  "image": {
+    "id": "J4Jv10E7O",
+    "url": "https://cdn2.thecatapi.com/images/J4Jv10E7O.jpg"
+  }
+},
+{
+  "id": 101318839,
+  "user_id": "w2yqnb",
+  "image_id": "QAWwhRFCG",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T17:19:51.000Z",
+  "image": {
+    "id": "QAWwhRFCG",
+    "url": "https://cdn2.thecatapi.com/images/QAWwhRFCG.jpg"
+  }
+},
+{
+  "id": 101318848,
+  "user_id": "w2yqnb",
+  "image_id": "dVujvBqnu",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T17:45:00.000Z",
+  "image": {
+    "id": "dVujvBqnu",
+    "url": "https://cdn2.thecatapi.com/images/dVujvBqnu.jpg"
+  }
+},
+{
+  "id": 101318851,
+  "user_id": "w2yqnb",
+  "image_id": "_PEqOH17A",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T18:44:32.000Z",
+  "image": {
+    "id": "_PEqOH17A",
+    "url": "https://cdn2.thecatapi.com/images/_PEqOH17A.jpg"
+  }
+},
+{
+  "id": 101318888,
+  "user_id": "w2yqnb",
+  "image_id": "86jwAC0vv",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-05T20:45:14.000Z",
+  "image": {
+    "id": "86jwAC0vv",
+    "url": "https://cdn2.thecatapi.com/images/86jwAC0vv.jpg"
+  }
+},
+{
+  "id": 101319248,
+  "user_id": "w2yqnb",
+  "image_id": "3FoFgV7R2",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-06T12:07:59.000Z",
+  "image": {
+    "id": "3FoFgV7R2",
+    "url": "https://cdn2.thecatapi.com/images/3FoFgV7R2.jpg"
+  }
+},
+{
+  "id": 101319251,
+  "user_id": "w2yqnb",
+  "image_id": "NuSl1fmU9",
+  "sub_id": "draviolo",
+  "created_at": "2023-04-06T12:44:33.000Z",
+  "image": {
+    "id": "NuSl1fmU9",
+    "url": "https://cdn2.thecatapi.com/images/NuSl1fmU9.jpg"
+  }
+}];

@@ -7,6 +7,9 @@ import { act } from 'react-dom/test-utils';
 const server = setupServer(
   rest.post(`${process.env.REACT_APP_ENDPOINT}/v1/favourites`, (req, res, ctx) => {
     return res(ctx.json({ "message":"SUCCESS", "id":101318813 }));
+  }),
+  rest.delete(`${process.env.REACT_APP_ENDPOINT}/v1/favourites/101318813`, (req, res, ctx) => {
+    return res(ctx.json({}));
   })
 );
 
@@ -43,5 +46,17 @@ test("should favourite an image", async () => {
     expect(result.current.isLoading).toBeFalsy();
     expect(result.current.error).toBe(null);
     expect(result.current.rs).toEqual({ "message":"SUCCESS", "id":101318813 });
+  });
+
+  act(() => {
+    result.current.removeFavourite(101318813);
+  });
+
+  expect(result.current.isLoading).toBeTruthy();
+
+  await waitFor(() => {
+    expect(result.current.isLoading).toBeFalsy();
+    expect(result.current.error).toBe(null);
+    expect(result.current.rs).toEqual({});
   });
 });
