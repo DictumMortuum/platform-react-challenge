@@ -1,7 +1,8 @@
 import React from 'react';
-import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 import { Link, useLocation } from 'react-router-dom';
-import { styled } from '@mui/material';
 
 const filterDuplicates = col => {
   const ids = col.map(d => d.id);
@@ -10,46 +11,26 @@ const filterDuplicates = col => {
   );
 }
 
-const size = 200;
-
-const Gallery = styled(Box)(({ theme }) => ({
-  display: "grid",
-  gridTemplateColumns: `repeat(auto-fit, minmax(${size}px, 1fr))`,
-  gap: theme.spacing(3),
-  paddingBottom: theme.spacing(1),
-  paddingTop: theme.spacing(1),
-}));
-
-const CatList = ({ data }) => {
+const CatList = ({ data, openModal }) => {
   const location = useLocation();
   const records = filterDuplicates(data);
 
   return (
-    <Gallery>
+    <Grid container spacing={2}>
       {records.map(d => {
         const { id, url, breeds: [{ name }] } = d;
 
         return (
-          <Box key={id} width={size} height={size}>
-            <Link to={`/img/${id}`} state={{ background: location, ...d }}>
-              <img
-                src={url}
-                srcSet={url}
-                alt={name}
-                loading="lazy"
-                data-testid="catimage"
-                style={{
-                  width: "100%",
-                  height: size,
-                  borderRadius: 8,
-                  objectFit: "cover"
-                }}
-              />
-            </Link>
-          </Box>
+          <Grid item xs={12} md={4} xl={3} key={id}>
+            <Card>
+              <Link to={`/img/${id}`} state={ openModal ? { background: location, ...d } : {background: null, ...d } }>
+                <CardMedia data-testid="catimage" component="img" image={url} alt={name} sx={{ height: 200 }} />
+              </Link>
+            </Card>
+          </Grid>
         );
       })}
-    </Gallery>
+    </Grid>
   );
 }
 

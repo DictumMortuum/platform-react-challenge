@@ -11,7 +11,7 @@ const BreedDetail = ({ limit }) => {
 
   return (
     <Dialog>
-      <CatList data={details} />
+      <CatList data={details} openModal={false} />
     </Dialog>
   );
 }

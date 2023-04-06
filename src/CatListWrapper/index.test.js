@@ -18,7 +18,7 @@ afterAll(() => server.close());
 test('render the CatList and test the LoadMore button', async () => {
   render(
     <BrowserRouter>
-      <CatList limit={10} />
+      <CatList limit={10} modalOpen={true} />
     </BrowserRouter>
   );
 

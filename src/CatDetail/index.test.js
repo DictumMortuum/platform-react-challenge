@@ -3,6 +3,7 @@ import CatDetail from '.';
 import { json } from '../setupTests';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
+import { BrowserRouter } from 'react-router-dom';
 
 const server = setupServer(
   rest.post(`${process.env.REACT_APP_ENDPOINT}/v1/favourites`, (req, res, ctx) => {
@@ -19,7 +20,9 @@ test('render the CatDetail', async () => {
   const { id, url, breeds } = data;
 
   render(
-    <CatDetail id={id} url={url} breeds={breeds} />
+    <BrowserRouter>
+      <CatDetail id={id} url={url} breeds={breeds} />
+    </BrowserRouter>
   );
 
   const header = screen.getByTestId("header");
