@@ -27,10 +27,9 @@ test('render the BreedListWrapper and test the Pagination', async () => {
     const element = screen.getByText(/Sphynx/);
     expect(element).toBeInTheDocument();
     expect(element).toBeVisible();
-  })
+  });
 
   const nextIcon = screen.getByTestId("NavigateNextIcon");
-
   act(() => {
     fireEvent.click(nextIcon);
   });
@@ -39,5 +38,16 @@ test('render the BreedListWrapper and test the Pagination', async () => {
     const element = screen.getByText(/Toyger/);
     expect(element).toBeInTheDocument();
     expect(element).toBeVisible();
-  })
+  });
+
+  const prevIcon = screen.getByTestId("NavigateBeforeIcon");
+  act(() => {
+    fireEvent.click(prevIcon);
+  });
+
+  await waitFor(() => {
+    const element = screen.getByText(/Sphynx/);
+    expect(element).toBeInTheDocument();
+    expect(element).toBeVisible();
+  });
 });

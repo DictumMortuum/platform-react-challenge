@@ -8,8 +8,8 @@ const BreedListWrapper = ({ perPage }) => {
 
   return (
     <>
-      <BreedList data={current_breeds} />
       <Pagination count={count} page={page} onChange={(e, p) => changePage(p)} />
+      <BreedList data={current_breeds} />
     </>
   );
 }
