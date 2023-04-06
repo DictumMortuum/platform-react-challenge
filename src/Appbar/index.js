@@ -24,7 +24,7 @@ const Bar = () => {
         <Toolbar disableGutters>
           <AdbIcon />
           {pages.map(({ name, link }) => (
-            <Link to={link}>
+            <Link key={name} to={link}>
               <Button sx={{ color: 'white', display: 'block' }}>{name}</Button>
             </Link>
           ))}
